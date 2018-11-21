@@ -8,10 +8,10 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
     }
   }
   public char charAt(int in){
-    return 'a';
+    return data[in];
   }
   public int length(){
-    return 0;
+    return data.length;
   }
   public CharSequence subSequence(int start, int end) {
     return this;
