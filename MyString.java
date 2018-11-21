@@ -8,8 +8,14 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
     }
   }
   public char charAt(int in){
-    return data[in];
+    try {
+      return data[in];
+    }
+    catch (ArrayIndexOutOfBoundsException e) {
+      throw new IndexOutOfBoundsException();
+    }
   }
+
   public int length(){
     return data.length;
   }
