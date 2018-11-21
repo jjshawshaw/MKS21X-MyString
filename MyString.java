@@ -14,8 +14,18 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
     return data.length;
   }
   public CharSequence subSequence(int start, int end) {
-    return this;
+    try {
+      String out = "";
+      for (int i = start; i < end; i++){
+        out += data[i];
+      }
+      return out;
+    }
+    catch (ArrayIndexOutOfBoundsException e) {
+      throw new IndexOutOfBoundsException();
+    }
   }
+
   public String toString(){
     return "";
   }
