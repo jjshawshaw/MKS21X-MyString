@@ -33,7 +33,11 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
   }
 
   public String toString(){
-    return "";
+    String out = "";
+    for (int i = 0; i < data.length; i++){
+      out += data[i];
+    }
+    return out;
   }
   public int compareTo(CharSequence s){
     return 0;
