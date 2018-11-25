@@ -40,6 +40,12 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
     return out;
   }
   public int compareTo(CharSequence s){
-    return 0;
+    for (int i = 0; i < Math.min(s.length(), data.length); i++){
+      if (s.charAt(i) > data[i]) return data[i] - s.charAt(i);
+      if (s.charAt(i) < data[i]) return data[i] - s.charAt(i);
+      }
+    if (s.length() > data.length) return data.length - s.length();
+    if (s.length() < data.length) return data.length - s.length();
+    else return 0;
   }
 }
